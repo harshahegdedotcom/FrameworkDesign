@@ -5,14 +5,18 @@ import org.apache.commons.lang3.builder.Builder;
 
 public class User {
 
-    private String Username;
-    private String Password;
+    private String username;
+    private String password;
+
     private  User(Builder builder) {
-        this.Username = builder.username;
-        this.Password = builder.password;
+        this.username = builder.username;
+        this.password = builder.password;
     }
 
-    class Builder {
+    public String getUsername() { return username; }
+    public String getPassword() { return password; }
+
+    public static class Builder {
         private String username;
         private String password;
 
@@ -29,5 +33,6 @@ public class User {
         public User build() {
             return new User(this);
         }
+
     }
 }
