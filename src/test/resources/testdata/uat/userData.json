@@ -1,0 +1,7 @@
+{
+  "patientName": "John UAT",
+  "age": 35,
+  "hospitalId": "QA1234",
+  "username": "qa_user",
+  "password": "qa@123"
+}

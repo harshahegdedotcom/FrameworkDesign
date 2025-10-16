@@ -12,13 +12,13 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(id = "username")
+    @FindBy(id = "input-email")
     private WebElement usernameField;
 
-    @FindBy(id = "password")
+    @FindBy(id = "input-password")
     private WebElement passwordField;
 
-    @FindBy(id = "loginBtn")
+    @FindBy(xpath = "//input[@value='Login']")
     private WebElement loginButton;
 
     public void open(String url) {

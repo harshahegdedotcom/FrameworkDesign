@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.java.version>4.24.0</selenium.java.version>
         <org.testng.version>7.11.0</org.testng.version>
+        <env>qa</env>
     </properties>
     <build>
         <pluginManagement>
@@ -30,17 +31,29 @@
                     <configuration>
                         <systemPropertyVariables>
                             <browser>chrome</browser>
-                            <selenium.grid.enabled>false</selenium.grid.enabled>
+                            <environment>${env}</environment>
                         </systemPropertyVariables>
-                        <suiteXmlFiles>
-                            <suiteXmlFile>testng.xml</suiteXmlFile>
-                        </suiteXmlFiles>
+
                     </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
-
     </build>
+
+    <profiles>
+        <profile>
+            <id>qa</id>
+            <properties>
+                <env>qa</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>uat</id>
+            <properties>
+                <env>uat</env>
+            </properties>
+        </profile>
+    </profiles>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
