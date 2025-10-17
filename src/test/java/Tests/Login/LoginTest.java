@@ -14,6 +14,7 @@ public class LoginTest extends BaseTest {
         //User user = new User(JSONTestDataReader.get("username"), JSONTestDataReader.get("password"));
         User user = new User(ConfigReader.get("username"), ConfigReader.get("password"));
         LoginPage loginPage = new LoginPage(driver);
+        loginPage.open("https://tutorialsninja.com/demo/index.php?route=account/login");
         loginPage.login(user.username(), user.password());
 
         System.out.println("Login test executed successfully for user: " + user.username());
